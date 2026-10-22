@@ -1,0 +1,47 @@
+# One-command local run:  docker compose up -d --build   ->  http://localhost:3000
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: researchos
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d researchos"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/researchos
+      STORAGE_DIR: /data/storage
+      # Runs without any API key by default (LLM_PROVIDER=none).
+      # To add a model later, put LLM_* / EMBEDDING_* variables in backend/.env.
+    env_file:
+      - path: ./backend/.env
+        required: false
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://backend:8000
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
+  storage:

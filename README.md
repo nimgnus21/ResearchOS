@@ -4,6 +4,26 @@
 
 重点在于文档处理、检索质量、引用准确性和可验证的工作流，而不是聊天界面。
 
+## 빠른 시작 (Docker, API 키 불필요)
+
+준비물은 [Docker Desktop](https://www.docker.com/products/docker-desktop/)(Windows / macOS) 또는 Docker Engine(Linux) 하나뿐입니다.
+
+```bash
+git clone https://github.com/nimgnus21/ResearchOS.git
+cd ResearchOS
+docker compose up -d --build
+```
+
+첫 실행은 이미지를 받고 빌드하느라 몇 분 걸립니다. 끝나면 브라우저에서 **http://localhost:3000** 을 엽니다.
+
+- 중지: `docker compose down` (업로드한 문서와 DB는 Docker 볼륨에 남습니다)
+- 데이터까지 모두 삭제: `docker compose down -v`
+- 로그 보기: `docker compose logs -f backend`
+- 3000 / 8000 포트를 다른 프로그램이 쓰고 있으면 `docker-compose.yml`의 `ports`를 바꿉니다 (예: `"3001:3000"`).
+
+API 키 없이 동작하는 것: 업로드·파싱, 하이브리드 검색, 질문에 대한 원문 근거 제시(문서·페이지·하이라이트), 근거 부족 시 거절, 문서별 근거 비교, 근거 모음 보고서 작성·편집·다운로드.
+API 키가 필요한 것: 모델이 작성하는 결론 문장, 비교의 A/B/C/D 분류, 보고서 요약. 나중에 키가 생기면 `backend/.env`에 `LLM_PROVIDER` / `LLM_API_KEY`를 넣고 `docker compose up -d --build backend`.
+
 ## 当前状态（如实说明）
 
 | 能力 | 状态 |
@@ -44,7 +64,8 @@ eval/
   corpus/build_corpus.py   生成虚构测试语料（KX-200 泵轴承过热）
   questions.json           固定评估问题（可回答 / 不可回答 / 比较）
   run_eval.py              评估运行器 → eval/results/eval_report.{md,json}
-scripts/dev.sh, stop.sh    一键启动 / 停止
+scripts/dev.sh, stop.sh    一键启动 / 停止（非 Docker）
+docker-compose.yml         Docker 一键运行（db + backend + frontend）
 ```
 
 ## 运行环境与安装
