@@ -1,0 +1,29 @@
+{
+  "description": "Fixed evaluation questions over the fictional KX-200 corpus. expected = acceptable (document, page) sources; key_facts = strings that must appear in the cited evidence.",
+  "answerable": [
+    {"id": "A1", "question": "KX-200 轴承过热的根本原因是什么？", "expected": [["kx200_revised_report_2024.pdf", 2], ["kx200_incident_report_2023.pdf", 2], ["maintenance_team_memo.md", 1], ["kx200_vendor_bulletin.docx", 1]], "key_facts": ["根本原因"]},
+    {"id": "A2", "question": "修订报告建议的补脂周期是多少运行小时？", "expected": [["kx200_revised_report_2024.pdf", 4]], "key_facts": ["400"]},
+    {"id": "A3", "question": "初步调查报告建议的补脂周期是多少？", "expected": [["kx200_incident_report_2023.pdf", 3]], "key_facts": ["500"]},
+    {"id": "A4", "question": "故障发生前驱动端轴承振动速度上升到多少？", "expected": [["operation_log_summary.txt", 1]], "key_facts": ["7.8 mm/s"]},
+    {"id": "A5", "question": "高温工况下应该使用什么润滑脂？", "expected": [["kx200_vendor_bulletin.docx", 2]], "key_facts": ["合成润滑脂"]},
+    {"id": "A6", "question": "故障轴承的金相与硬度检验结果如何？", "expected": [["kx200_revised_report_2024.pdf", 3]], "key_facts": ["GB/T 18254"]},
+    {"id": "A7", "question": "维护班组认为轴承过热的真正原因是什么？", "expected": [["maintenance_team_memo.md", 1]], "key_facts": ["B-2207"]},
+    {"id": "A8", "question": "激光对中校正后轴承温度稳定在多少？", "expected": [["operation_log_summary.txt", 2]], "key_facts": ["62°C"]},
+    {"id": "A9", "question": "What was the bearing overheating at Site 7 linked to?", "expected": [["kx200_field_notes_en.md", 1]], "key_facts": ["misalignment"]},
+    {"id": "A10", "question": "故障时轴承温度达到了多少度？", "expected": [["kx200_incident_report_2023.pdf", 1]], "key_facts": ["96°C"]},
+    {"id": "A11", "question": "激光对中检测显示的角向不对中是多少？", "expected": [["kx200_revised_report_2024.pdf", 2]], "key_facts": ["0.35 mm/100 mm"]},
+    {"id": "A12", "question": "技术公告 TB-2024-07 的适用范围是什么？", "expected": [["kx200_vendor_bulletin.docx", 1]], "key_facts": ["40°C"]}
+  ],
+  "unanswerable": [
+    {"id": "U1", "question": "KX-200 泵的采购价格是多少？"},
+    {"id": "U2", "question": "该泵站的员工人数是多少？"},
+    {"id": "U3", "question": "KX-200 在海上平台的设计使用寿命是多少年？"},
+    {"id": "U4", "question": "What is the warranty period of the KX-200?"},
+    {"id": "U5", "question": "供应商 B 的公司注册地址在哪里？"},
+    {"id": "U6", "question": "事故造成的直接经济损失是多少万元？"}
+  ],
+  "comparison": {
+    "question": "比较这些文档对 KX-200 轴承过热根本原因的解释",
+    "must_include_documents": ["kx200_incident_report_2023.pdf", "kx200_revised_report_2024.pdf", "maintenance_team_memo.md", "kx200_vendor_bulletin.docx"]
+  }
+}

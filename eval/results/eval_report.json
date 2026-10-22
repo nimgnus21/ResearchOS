@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-10-22T00:49:01.048711+00:00",
+  "config": {
+    "embedding": "hash",
+    "top_k": 8,
+    "min_term_coverage": 0.5,
+    "min_vector_sim": 0.55,
+    "chunk_target_chars": 700,
+    "chunk_overlap_chars": 120
+  },
+  "ingestion": {
+    "kx200_field_notes_en.md": {
+      "status": "ready",
+      "chunks": 2,
+      "pages": 1,
+      "error": null
+    },
+    "kx200_incident_report_2023.pdf": {
+      "status": "ready",
+      "chunks": 4,
+      "pages": 4,
+      "error": null
+    },
+    "kx200_revised_report_2024.pdf": {
+      "status": "ready",
+      "chunks": 4,
+      "pages": 4,
+      "error": null
+    },
+    "kx200_vendor_bulletin.docx": {
+      "status": "ready",
+      "chunks": 2,
+      "pages": 2,
+      "error": null
+    },
+    "maintenance_team_memo.md": {
+      "status": "ready",
+      "chunks": 1,
+      "pages": 1,
+      "error": null
+    },
+    "operation_log_summary.txt": {
+      "status": "ready",
+      "chunks": 2,
+      "pages": 2,
+      "error": null
+    },
+    "scanned_inspection_sheet.pdf": {
+      "status": "needs_ocr",
+      "chunks": 0,
+      "pages": null,
+      "error": "PDF 共 1 页，均为图像且没有可提取的文本层（可能是扫描件），需要先进行 OCR 处理"
+    }
+  },
+  "ingestion_seconds": 0.15,
+  "metrics": {
+    "recall@5": 1.0,
+    "mrr@10": 1.0,
+    "top1_accuracy": 1.0,
+    "key_fact_in_evidence": 1.0,
+    "false_refusal_rate": 0.0,
+    "unanswerable_refusal_rate": 1.0,
+    "citation_integrity": 1.0,
+    "citations_checked": 22,
+    "comparison_doc_coverage": 1.0
+  },
+  "answerable": [
+    {
+      "id": "A1",
+      "question": "KX-200 轴承过热的根本原因是什么？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_revised_report_2024.pdf p.2",
+      "evidence_count": 2,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A2",
+      "question": "修订报告建议的补脂周期是多少运行小时？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_revised_report_2024.pdf p.4",
+      "evidence_count": 4,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A3",
+      "question": "初步调查报告建议的补脂周期是多少？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_incident_report_2023.pdf p.3",
+      "evidence_count": 4,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A4",
+      "question": "故障发生前驱动端轴承振动速度上升到多少？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "operation_log_summary.txt p.1",
+      "evidence_count": 1,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A5",
+      "question": "高温工况下应该使用什么润滑脂？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_vendor_bulletin.docx p.2",
+      "evidence_count": 2,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A6",
+      "question": "故障轴承的金相与硬度检验结果如何？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_revised_report_2024.pdf p.3",
+      "evidence_count": 1,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A7",
+      "question": "维护班组认为轴承过热的真正原因是什么？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "maintenance_team_memo.md p.1",
+      "evidence_count": 1,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A8",
+      "question": "激光对中校正后轴承温度稳定在多少？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "operation_log_summary.txt p.2",
+      "evidence_count": 1,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A9",
+      "question": "What was the bearing overheating at Site 7 linked to?",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_field_notes_en.md p.1",
+      "evidence_count": 1,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A10",
+      "question": "故障时轴承温度达到了多少度？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_incident_report_2023.pdf p.1",
+      "evidence_count": 2,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A11",
+      "question": "激光对中检测显示的角向不对中是多少？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_revised_report_2024.pdf p.2",
+      "evidence_count": 1,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    },
+    {
+      "id": "A12",
+      "question": "技术公告 TB-2024-07 的适用范围是什么？",
+      "status": "llm_unavailable",
+      "recall_at_k": true,
+      "rank": 1,
+      "top1": "kx200_vendor_bulletin.docx p.1",
+      "evidence_count": 2,
+      "key_fact_in_evidence": true,
+      "top1_correct": true
+    }
+  ],
+  "unanswerable": [
+    {
+      "id": "U1",
+      "question": "KX-200 泵的采购价格是多少？",
+      "status": "insufficient_evidence",
+      "refused": true,
+      "best_coverage": 0.0061
+    },
+    {
+      "id": "U2",
+      "question": "该泵站的员工人数是多少？",
+      "status": "insufficient_evidence",
+      "refused": true,
+      "best_coverage": 0.1564
+    },
+    {
+      "id": "U3",
+      "question": "KX-200 在海上平台的设计使用寿命是多少年？",
+      "status": "insufficient_evidence",
+      "refused": true,
+      "best_coverage": 0.123
+    },
+    {
+      "id": "U4",
+      "question": "What is the warranty period of the KX-200?",
+      "status": "insufficient_evidence",
+      "refused": true,
+      "best_coverage": 0.0091
+    },
+    {
+      "id": "U5",
+      "question": "供应商 B 的公司注册地址在哪里？",
+      "status": "insufficient_evidence",
+      "refused": true,
+      "best_coverage": 0.2146
+    },
+    {
+      "id": "U6",
+      "question": "事故造成的直接经济损失是多少万元？",
+      "status": "insufficient_evidence",
+      "refused": true,
+      "best_coverage": 0.0311
+    }
+  ],
+  "comparison": {
+    "status": "llm_unavailable",
+    "documents_with_evidence": {
+      "kx200_incident_report_2023.pdf": true,
+      "kx200_vendor_bulletin.docx": true,
+      "operation_log_summary.txt": false,
+      "kx200_revised_report_2024.pdf": true,
+      "maintenance_team_memo.md": true,
+      "kx200_field_notes_en.md": false
+    }
+  },
+  "bad_citations": [],
+  "llm": {
+    "run": false,
+    "reason": "未配置大模型（LLM_PROVIDER=none）"
+  }
+}

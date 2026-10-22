@@ -1,0 +1,12 @@
+backend/.venv/
+backend/.env
+__pycache__/
+.pytest_cache/
+data/
+eval/corpus/files/
+frontend/node_modules/
+frontend/.next/
+frontend/test-results/
+frontend/playwright-report/
+frontend/next-env.d.ts
+*.tsbuildinfo

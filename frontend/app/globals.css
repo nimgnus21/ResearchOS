@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  color-scheme: light;
+}
+body {
+  @apply bg-slate-100 text-slate-900 antialiased;
+}
+mark.evidence-hl {
+  @apply bg-amber-200 text-slate-900 rounded-sm;
+}
